@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from main import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index), # 8000/
     path('cats/', views.categories), # /cats/
 ]
+
+handler404 = views.page_not_found
