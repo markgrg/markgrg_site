@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index), # 8000/
     path('cats/', views.categories), # /cats/
+    path('about/', views.about), # about/
 ]
 
 handler404 = views.page_not_found
