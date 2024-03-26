@@ -22,8 +22,8 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index), # 8000/
-    path('cats/', views.categories), # /cats/
     path('about/', views.about), # about/
+    path('post/<str:post_name_id>/', views.show_post, name='post')
 ]
 
 handler404 = views.page_not_found
