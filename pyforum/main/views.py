@@ -2,7 +2,12 @@ from django.http.response import HttpResponseNotFound
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 
-menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+
+menu = [{'title': 'Добавить статью', 'url_name': 'addpost'},
+        {'title': 'О сайте', 'url_name': 'about'},
+        {'title': 'Обратная связь', 'url_name': 'contact'},
+        {'title': 'Войти', 'url_name': 'login'}
+]
 
 data_db = [
     {'post_name_id': 'python_post', 'title': 'Python', 'content': 'Где применаяется язык Python', 'is_published': True},
@@ -26,3 +31,15 @@ def about(request):
 
 def show_post(request, post_name_id):
     return HttpResponse(f'Отображение статьи {post_name_id}')
+
+def addpost(request):
+    return HttpResponse(f'Добавление поста')
+
+def show_post(request, post_name_id):
+    return HttpResponse(f'Отображение статьи {post_name_id}')
+
+def contact(request):
+    return HttpResponse(f'Обратная связь')
+
+def login(request):
+    return HttpResponse(f'Авторизация')
