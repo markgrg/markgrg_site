@@ -21,8 +21,13 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index), # 8000/
-    path('about/', views.about), # about/
+    path('', views.index, name='home'), # 8000/
+    path('about/', views.about, name='about'), # about/
+    path('addpost', views.addpost, name='addpost'), # addpost/
+    path('contact/', views.contact, name='contact'), # contact/
+    path('login/', views.login, name='login'), # login/
+
+
     path('post/<str:post_name_id>/', views.show_post, name='post')
 ]
 
