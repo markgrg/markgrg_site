@@ -27,7 +27,7 @@ def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
 
 def about(request):
-    return render(request, 'about.html', {"title": 'О нас'})
+    return render(request, 'about.html', {"title": 'О нас', 'menu': menu})
 
 def show_post(request, post_name_id):
     return HttpResponse(f'Отображение статьи {post_name_id}')
